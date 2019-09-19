@@ -1,0 +1,110 @@
+﻿<Window x:Name="fenetre" x:Class="TP1_E2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TP1_E2"
+        mc:Ignorable="d"
+        Title="TP1" Height="608.149" Width="734.406" Closing="Window_Closing">
+        <Grid>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" Margin="2,525,2,5">
+            <Button Name="btnPreviousTab" Click="btnPreviousTab_Click">Prev.</Button>
+            <Button Name="btnNextTab" Click="btnNextTab_Click">Next</Button>
+        </StackPanel>
+        <TabControl Name="tcSample" Margin="0,10,0,57">
+            <TabItem Name="CH" Header="Chaffeurs">
+                <Grid Height="500" Width="600" Margin="79,0,7,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*"></RowDefinition>
+                        <RowDefinition Height="30*"></RowDefinition>
+                        <RowDefinition Height="30*"></RowDefinition>
+                        <RowDefinition Height="30*"></RowDefinition>
+                        <RowDefinition Height="30*"></RowDefinition>
+                        <RowDefinition Height="150*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70*"></ColumnDefinition>
+                        <ColumnDefinition Width="200*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label HorizontalAlignment="Right" Margin="0,0,50,0" Width="90" Height="35">Nom:</Label>
+                    <Label Grid.Row="1" HorizontalAlignment="Right" Margin="0,10,50,0" Width="90" Height="35">Prénom:</Label>
+                    <Label Grid.Row="2" HorizontalAlignment="Right" Margin="0,10,50,0" Width="90" Height="35">Tél:</Label>
+                    <Label Grid.Row="3" HorizontalAlignment="Right" Margin="0,10,50,0" Width="90" Height="35">Num Permi:</Label>
+                    <Label Grid.Row="4" HorizontalAlignment="Right" Margin="0,10,50,0" Width="90" Height="35">Référence Véh:</Label>
+					<TextBox x:Name="nom" Grid.Column="1" Margin="0,0,0,51" Grid.RowSpan="2"/>
+					<TextBox Grid.Row="1" x:Name="prenom" Grid.Column="1" Margin="0,10,0,0" Height="35" />
+                    <TextBox Grid.Row="2" x:Name="tel" Grid.Column="1" Margin="0,10,0,0" Height="35"  />
+                    <TextBox Grid.Row="3" x:Name="numPermi" Grid.Column="1" Margin="0,10,0,0" Height="35" />
+                    <TextBox Grid.Row="4" x:Name="refVeh" Grid.Column="1" Margin="0,10,0,0" Height="35" />
+                    <Button Grid.Row="5" Content="Ajouter"  Height="29" HorizontalAlignment="Left" Margin="16,23,0,0" Name="Ajouter" VerticalAlignment="Top" Width="75" Click="btn_Ajouter_Click"/>
+                    <Button Grid.Row="5" Content="Modifier"  Height="29" HorizontalAlignment="Left" Margin="16,72,0,0" x:Name="Modifier" VerticalAlignment="Top" Width="75" Click="btn_Modifier_Click"/>
+                    <Button Grid.Row="5" Content="Fermer"  Height="29" HorizontalAlignment="Left" Margin="16,123,0,0" x:Name="Fermer" VerticalAlignment="Top" Width="75" Click="btn_Fermer_Click"/>
+                    <Button Grid.Row="5" Content="Consulter"  Height="29" HorizontalAlignment="Left" Margin="0,23,0,0" x:Name="Consulter" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="btn_Consulter_Click"/>
+                    <Button Grid.Row="5" Content="Supprimer"  Height="29" HorizontalAlignment="Left" Margin="0,72,0,0" x:Name="Supprimer" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="btn_Supprimer_Click"/>
+                </Grid>
+            </TabItem>
+			<TabItem Name="T" Header="Taxis" >
+                <Grid Height="500" Width="600" Margin="79,0,7,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*"></RowDefinition>
+                        <RowDefinition Height="30*"></RowDefinition>
+                        <RowDefinition Height="30*"></RowDefinition>
+                        <RowDefinition Height="30*"></RowDefinition>
+                        <RowDefinition Height="30*"></RowDefinition>
+                        <RowDefinition Height="150*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70*"></ColumnDefinition>
+                        <ColumnDefinition Width="200*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label HorizontalAlignment="Right" Margin="0,0,50,0" Width="90" Height="35">Référence Véh:</Label>
+                    <Label Grid.Row="1" HorizontalAlignment="Right" Margin="0,10,50,0" Width="90" Height="35">Zone:</Label>
+                    <Label Grid.Row="2" HorizontalAlignment="Right" Margin="0,10,50,0" Width="90" Height="35">Immatricule:</Label>
+                    <Label Grid.Row="3" HorizontalAlignment="Right" Margin="0,10,50,0" Width="90" Height="35">Nbr Place:</Label>
+                    <Label Grid.Row="4" HorizontalAlignment="Right" Margin="0,10,50,0" Width="90" Height="35">Marque:</Label>
+                    <TextBox Name="refVeh2" Grid.Column="1"/>
+                    <TextBox Grid.Row="1" Name="zone" Grid.Column="1" Margin="0,10,0,0" Height="35" />
+                    <TextBox Grid.Row="2" x:Name="immatricule" Grid.Column="1" Margin="0,10,0,0" Height="35"  />
+                    <TextBox Grid.Row="3" x:Name="nbrPlace" Grid.Column="1" Margin="0,10,0,0" Height="35" />
+                    <TextBox Grid.Row="4" x:Name="marque" Grid.Column="1" Margin="0,10,0,0" Height="35" />
+                    <Button Grid.Row="5" Content="Ajouter"  Height="29" HorizontalAlignment="Left" Margin="16,23,0,0" Name="Ajouter2" VerticalAlignment="Top" Width="75" Click="btn_Ajouter_Click"/>
+                    <Button Grid.Row="5" Content="Modifier"  Height="29" HorizontalAlignment="Left" Margin="16,72,0,0" x:Name="Modifier2" VerticalAlignment="Top" Width="75" Click="btn_ModifierT_Click"/>
+                    <Button Grid.Row="5" Content="Fermer"  Height="29" HorizontalAlignment="Left" Margin="16,123,0,0" x:Name="Fermer2" VerticalAlignment="Top" Width="75" Click="btn_Fermer_Click"/>
+                    <Button Grid.Row="5" Content="Consulter"  Height="29" HorizontalAlignment="Left" Margin="0,23,0,0" x:Name="Consulter2" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="btn_ConsulterT_Click"/>
+                    <Button Grid.Row="5" Content="Supprimer"  Height="29" HorizontalAlignment="Left" Margin="0,72,0,0" x:Name="Supprimer2" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="btn_SupprimerT_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Name="TO" Header="Tournées">
+                <Grid Height="500" Width="600" Margin="79,0,7,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*"></RowDefinition>
+                        <RowDefinition Height="30*"></RowDefinition>
+                        <RowDefinition Height="30*"></RowDefinition>
+                        <RowDefinition Height="30*"></RowDefinition>
+                        <RowDefinition Height="30*"></RowDefinition>
+                        <RowDefinition Height="150*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70*"></ColumnDefinition>
+                        <ColumnDefinition Width="200*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label HorizontalAlignment="Right" Margin="0,0,50,0" Width="90" Height="35">Orgine:</Label>
+                    <Label Grid.Row="1" HorizontalAlignment="Right" Margin="0,10,50,0" Width="90" Height="35">Destination:</Label>
+                    <Label Grid.Row="2" HorizontalAlignment="Right" Margin="0,10,50,0" Width="90" Height="35">Heure départ:</Label>
+                    <Label Grid.Row="3" HorizontalAlignment="Right" Margin="0,10,50,0" Width="90" Height="35">Client:</Label>
+                    <Label Grid.Row="4" HorizontalAlignment="Right" Margin="0,10,50,0" Width="90" Height="35">Référence Véh:</Label>
+					<TextBox x:Name="origine" Grid.Column="1" Height="35" Margin="0,0,0,51" Grid.RowSpan="2"/>
+					<TextBox Grid.Row="1" x:Name="dest" Grid.Column="1" Margin="0,10,0,0" Height="35" />
+                    <TextBox Grid.Row="2" x:Name="hrDepart" Grid.Column="1" Margin="0,10,0,0" Height="35"  />
+                    <TextBox Grid.Row="3" x:Name="client" Grid.Column="1" Margin="0,10,0,0" Height="35" />
+                    <TextBox Grid.Row="4" x:Name="refVeh3" Grid.Column="1" Margin="0,10,0,0" Height="35" />
+                    <Button Grid.Row="5" Content="Ajouter"  Height="29" HorizontalAlignment="Left" Margin="16,23,0,0" Name="Ajouter3" VerticalAlignment="Top" Width="75" Click="btn_Ajouter_Click"/>
+                    <Button Grid.Row="5" Content="Modifier"  Height="29" HorizontalAlignment="Left" Margin="16,72,0,0" x:Name="Modifier3" VerticalAlignment="Top" Width="75" Click="btn_ModifierTo_Click"/>
+                    <Button Grid.Row="5" Content="Fermer"  Height="29" HorizontalAlignment="Left" Margin="16,123,0,0" x:Name="Fermer3" VerticalAlignment="Top" Width="75" Click="btn_Fermer_Click"/>
+                    <Button Grid.Row="5" Content="Consulter"  Height="29" HorizontalAlignment="Left" Margin="0,23,0,0" x:Name="Consulter3" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
+                    <Button Grid.Row="5" Content="Supprimer"  Height="29" HorizontalAlignment="Left" Margin="0,72,0,0" x:Name="Supprimer3" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="btn_SupprimerTo_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
